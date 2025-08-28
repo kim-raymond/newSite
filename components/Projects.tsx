@@ -1,7 +1,7 @@
 "use client";
 
 import { easeInOut, motion } from "framer-motion";
-import { useRef, useState, useEffect } from "react";
+import { useRef} from "react";
 import Image from "next/image";
 
 export default function Projects() {

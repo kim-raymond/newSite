@@ -1,10 +1,10 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import PracticeAnimation from "@/components/ScrollTriggered";
+// import PracticeAnimation from "@/components/ScrollTriggered";
 import ApearOnscroll from "@/components/ApearOnscroll";
 import Projects from "@/components/Projects";
 import Services from "@/components/Services";
-import Offers from "@/components/Offers";
+// import Offers from "@/components/Offers";
 import About from "@/components/About";
 
 export default function Home() {

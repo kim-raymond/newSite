@@ -2,7 +2,7 @@
 
 import { motion } from "motion/react"
 
-motion
+
 
 export default function EnterAnimation(){
     return<

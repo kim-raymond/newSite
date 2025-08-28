@@ -1,5 +1,6 @@
 'use client'
-import Image from "next/image"
+import Image from "next/image";
+import Link from "next/link";
 export default function About (){
     return(
         <div className="grid grid-cols-2 h-[100vh] w-full text-neutral-800 mt-40">
@@ -14,7 +15,7 @@ export default function About (){
                <div className="flex items-center  w-full h-min mt-10">
 
                <div className="p-2 bg-blue-500 rounded-md w-1/4 text-center mr-4">
-                <a  href="/" className="text-neutral-100 text-[16px]">Curriculumn-Vitae</a>
+                <Link  href="/" className="text-neutral-100 text-[16px]">Curriculumn-Vitae</Link>
                </div> 
 
                 <div>

@@ -1,6 +1,6 @@
 'use client'
 // import PropTypes from 'react';
-import { useRef, useState } from "react";
+import { useRef} from "react";
 import {useScroll, useTransform, motion, spring, easeIn} from "motion/react"
 import { title } from "process";
 
