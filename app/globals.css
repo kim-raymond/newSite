@@ -4,6 +4,23 @@
   --background: #ffffff;
   --foreground: #171717;
 }
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: rgb(83, 83, 83);
+}
+::-webkit-scrollbar-thumb {
+  background:#242323 ;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: transparent;
+}
+@theme {
+  --color-midnight: #121063;
+  --color-tahiti: #3ab7bf;
+  --color-bermuda: #699AA4;
+}
 
 @theme inline {
   --color-background: var(--background);
@@ -22,5 +39,13 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+   overflow-x: hidden;
+}
+
+.font-horizon {
+  font-family: var(--font-horizon), sans-serif;
+}
+.font-horizon-outlined {
+  font-family: var(--font-horizon-outlined),sans-serif;
 }
