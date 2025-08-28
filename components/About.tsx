@@ -15,7 +15,7 @@ export default function About (){
                <div className="flex items-center  w-full h-min mt-10">
 
                <div className="p-2 bg-blue-500 rounded-md w-1/4 text-center mr-4">
-                <Link  href="/" className="text-neutral-100 text-[16px]">Curriculumn-Vitae</Link>
+                <Link  href="/Resume.pdf" className="text-neutral-100 text-[16px]">Curriculumn-Vitae</Link>
                </div> 
 
                 <div>
