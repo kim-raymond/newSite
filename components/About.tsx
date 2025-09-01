@@ -19,7 +19,8 @@ export default function About (){
     //   "_blank",
     //   "noopener,noreferrer"
     // );
-  };
+//   };
+
     return(
         <div className="grid grid-cols-2 h-[100vh] w-full text-neutral-800 mt-40">
             <div className="flex flex-col items-center">
@@ -58,3 +59,4 @@ export default function About (){
             </div>
         </div>
     )
+}
