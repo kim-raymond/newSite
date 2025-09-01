@@ -1,5 +1,6 @@
 'use client'
 import { motion } from "motion/react";
+import { Londrina_Sketch } from "next/font/google";
 // import { div } from "motion/react-client";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,7 +13,13 @@ export default function About (){
                 things I can do through this technology. Consequently, my natural passion to create 
                 stuffs keep me doing web development as a hobby, not a task.`
 
-    
+    // const openGmailCompose = () => {
+    // window.open(
+    //   "https://mail.google.com/mail/?view=cm&fs=1&to=magallaneskim774@gmail.com",
+    //   "_blank",
+    //   "noopener,noreferrer"
+    // );
+  };
     return(
         <div className="grid grid-cols-2 h-[100vh] w-full text-neutral-800 mt-40">
             <div className="flex flex-col items-center">
@@ -40,15 +47,14 @@ export default function About (){
                 <Link  href="/Resume.pdf" target="_blank" rel="noopener noreferrer" className="text-neutral-100 text-[16px]">Curriculumn-Vitae</Link>
                </div> 
 
-                <div>
+                {/* <button onClick={openGmailCompose}> 
                 <Image src='/gmail.svg' width={40} height={40} alt="github" className="mx-6"/>
-                </div>
+                </button> */}
 
-                <div>
+                <Link href="https://github.com/kim-raymond" target="_blank" rel="noopener noreferrer">
                     <Image src='/github-mark.svg' width={33} height={30} alt="github" className="mx-6"/>
-               </div>
+               </Link>
                </div>
             </div>
         </div>
     )
-}
