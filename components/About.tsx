@@ -1,7 +1,18 @@
 'use client'
+import { motion } from "motion/react";
+// import { div } from "motion/react-client";
 import Image from "next/image";
 import Link from "next/link";
 export default function About (){
+
+    const aboutText = `Started Web Development back in year 2019. 
+                I have always found joy when it comes to creating something and 
+                learning how some technology works. When I discover web development 
+                in my senior year in high school. I was so astonished realizing the amount of 
+                things I can do through this technology. Consequently, my natural passion to create 
+                stuffs keep me doing web development as a hobby, not a task.`
+
+    
     return(
         <div className="grid grid-cols-2 h-[100vh] w-full text-neutral-800 mt-40">
             <div className="flex flex-col items-center">
@@ -10,7 +21,18 @@ export default function About (){
             
             <div className="text-left text-neutral-700 ">
                 <h2 className="font-bold font-horizon text-5xl tracking-wide leading-16">About</h2>
-                <p className="font- w-2/3 text-[18px]">Started Web Development back in year 2019. I have always found joy when it comes to creating something and learning how some technology works. When I discover web development in my senior year in high school. I was so astonished realizing the amount of things I can do through this technology. Consequently, my natural passion to create stuffs keep me doing web development as a hobby, not a task.</p>
+                <div className=" w-[25rem]">
+               {
+                aboutText.split("").map((l,i)=>(
+                        <motion.span 
+                        initial={{opacity:0}}
+                        whileInView={{opacity:1}}
+                        transition={{delay:i*0.01,duration:0.1}}
+                        className="" key={i}>{l}
+                        </motion.span>
+                ))
+                } 
+                </div>
                
                <div className="flex items-center  w-full h-min mt-10">
 

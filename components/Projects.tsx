@@ -95,14 +95,15 @@ export default function Projects() {
       <div className=" grid grid-cols-2 gap-2 h-[80vh]">
         {secondImages.map((image,i)=>(
           <div key={i}
-          className=" flex flex-col items-center justify-center ">
-          <Image
-          src={image.src}
-          width={image.width}
-          height={image.height}
-          alt={image.alt}
-          className="rounded-md"/>
-          </div>
+          className='
+          flex flex-col 
+          items-center justify-center 
+          bg-size-(--bg-normal) bg-no-repeat bg-center
+          hover:bg-size-(--bg-zoomed)
+          transition-all duration-500 ease-in-out'
+            style={{
+            backgroundImage: `url(${image.src})`,
+          }}></div>
 
         ))}
       </div>
