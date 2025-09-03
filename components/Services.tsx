@@ -2,15 +2,14 @@
 // import PropTypes from 'react';
 import { useRef} from "react";
 import {useScroll, useTransform, motion, spring, easeIn} from "motion/react"
-import { title } from "process";
+// import { title } from "process";
 
 interface ServicesProps{
-    hovered:boolean;
-    setHovered:React.Dispatch<React.SetStateAction<boolean>>;
+    setHovered:React.Dispatch<React.SetStateAction<number>>;
     setIndex:React.Dispatch<React.SetStateAction<number>>;
 }
 
-export default function Services ({hovered,setHovered,setIndex}:ServicesProps){
+export default function Services ({setHovered,setIndex}:ServicesProps){
     const ref = useRef(null)
     const {scrollYProgress} = useScroll({target:ref,offset:["start end","end start"]})
     const borderRadius = useTransform(scrollYProgress, [0, 0.3, 0.8, 0.95], ['50%', '0%', '0%', '50%'])
@@ -22,10 +21,9 @@ export default function Services ({hovered,setHovered,setIndex}:ServicesProps){
         {title:'Web Page Clonning', description:'Get a clone version of your desired webpage with the same function and animation.'}
     ]
     
-    const managaHover =(a:boolean,b:number)=>{
+    const managaHover =(a:number,b:number)=>{
         setHovered(a)
         setIndex(b)
-
     }
 
     return(
@@ -44,15 +42,15 @@ export default function Services ({hovered,setHovered,setIndex}:ServicesProps){
             className="flex flex-col items-center text-neutral-400/100 h-[130vh] pt-30 w-full bg-neutral-800 ">
 
             <h1 className="text-5xl font-bold font-horizon leading-10 tracking-wide">Services</h1>
-            <p className="text-2xl tracking-wide font-poppins mt-8">Avail Personalized solutions crafted to elevate your online presence</p>
+            <p className="text-2xl tracking-wide font-poppins mt-8">Avail Personalized solutions crafted to advance your online presence</p>
             <div className="text-left my-22 w-2/3 border-b border-neutral-600">
                 {ServicesData.map((service,i)=>(
                 <motion.div 
                 initial={{height:65}}
                 whileHover={{height:100}}
                 transition={{ease:easeIn}}
-                onHoverStart={()=>managaHover(true,i)}
-                onHoverEnd={()=>managaHover(false,i)} 
+                onHoverStart={()=>managaHover(2,i)}
+                onHoverEnd={()=>managaHover(0,i)} 
                 key={i} className=" border-t border-neutral-600 overflow-y-clip">
                   <h3 className="font-bold text-4xl tracking-normal leading-15">{service.title}</h3>
                   <p className="font-poppins text-[18px] ">{service.description}</p>  

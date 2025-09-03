@@ -4,9 +4,14 @@ import { easeInOut, motion } from "framer-motion";
 import { useRef} from "react";
 import Image from "next/image";
 
-export default function Projects() {
+interface HoverProps{
+  setHovered:React.Dispatch<React.SetStateAction<number>>
+}
+
+export default function Projects({setHovered}:HoverProps) {
   const sectionRef = useRef<HTMLDivElement | null>(null);
   // const [startAnimation, setStartAnimation] = useState(false);
+
 
   // Image array
   const images = [
@@ -79,7 +84,9 @@ export default function Projects() {
               {/* Image centered and overlapping above */}
               <motion.div 
               className="absolute inset-0 flex items-center justify-center"
-              whileHover={{bottom:20}}>
+              whileHover={{bottom:20}}
+              onHoverStart={()=>setHovered(1)}
+              onHoverEnd={()=>setHovered(0)}>
                 <Image
                   src={img.src}
                   width={img.width}
