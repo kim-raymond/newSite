@@ -13,13 +13,13 @@ export default function About (){
                 things I can do through this technology. Consequently, my natural passion to create 
                 stuffs keep me doing web development as a hobby, not a task.`
 
-    // const openGmailCompose = () => {
-    // window.open(
-    //   "https://mail.google.com/mail/?view=cm&fs=1&to=magallaneskim774@gmail.com",
-    //   "_blank",
-    //   "noopener,noreferrer"
-    // );
-//   };
+            const openGmailCompose = () => {
+            window.open(
+            "https://mail.google.com/mail/?view=cm&fs=1&to=magallaneskim774@gmail.com",
+            "_blank",
+            "noopener,noreferrer"
+            );
+        };
 
     return(
         <div className="grid grid-cols-2 h-[100vh] w-full text-neutral-800 mt-40">
@@ -44,13 +44,13 @@ export default function About (){
                
                <div className="flex items-center  w-full h-min mt-10">
 
-               <div className="p-2 bg-blue-500 rounded-md w-1/4 text-center mr-4">
+               <div className="py-2 px-3 bg-blue-500 rounded-md w-[12rem] text-center mr-4">
                 <Link  href="/Resume.pdf" target="_blank" rel="noopener noreferrer" className="text-neutral-100 text-[16px]">Curriculumn-Vitae</Link>
                </div> 
 
-                {/* <button onClick={openGmailCompose}> 
+                <button onClick={openGmailCompose}> 
                 <Image src='/gmail.svg' width={40} height={40} alt="github" className="mx-6"/>
-                </button> */}
+                </button>
 
                 <Link href="https://github.com/kim-raymond" target="_blank" rel="noopener noreferrer">
                     <Image src='/github-mark.svg' width={33} height={30} alt="github" className="mx-6"/>
