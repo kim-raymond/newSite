@@ -66,9 +66,9 @@ export default function Projects({setHovered}:HoverProps) {
       </div>
 
       {/* Project Grid */}
-      <div className="grid grid-cols-3 gap-8 justify-items-stretch mt-8">
+      <div className="grid  justify-items-stretch mt-30 lg:grid-cols-3 lg:mt-20 lg:gap-8 ">
         {images.map((img, i) => (
-          <motion.div key={i} className="relative w-80 h-70">
+          <motion.div key={i} className="relative w-80 h-58 lg:h-70 ">
             {/* Background using separate array */}
             <motion.div
               initial={{ opacity: 0, top: "20%" }}
@@ -99,7 +99,7 @@ export default function Projects({setHovered}:HoverProps) {
           </motion.div>
         ))}
       </div>
-      <div className=" grid grid-cols-2 gap-2 h-[80vh]">
+      <div className=" grid grid-cols-1 gap-2 h-[80vh] lg:grid-cols-2">
         {secondImages.map((image,i)=>(
           <div key={i}
           className='

@@ -22,7 +22,8 @@ export default function PracticeAnimation() {
     const toolsCount = 2; // duplicate count for seamless loop
 
     useGSAP(() => {
-      const ticker = document.querySelector('.tools-ticker');
+      gsap.to(".reactLogo",{rotate:360,repeat:-1,duration:2,ease:"power2.out",repeatDelay:3},)
+      const ticker = document.querySelector('.tools');
       if (!ticker) return;
       const tickerWidth = ticker.scrollWidth / toolsCount;
       gsap.to(ticker, {
@@ -36,9 +37,9 @@ export default function PracticeAnimation() {
       });
     }, {scope:container});
   return (
-    <div className="w-full h-[100vh] ">
+    <div className="relative w-full h-[130vh] lg:h-[100vh] " ref={container}>
     {/* NAV SECTION */}
-    <div className="absolute flex items-center justify-between w-full h-1.5rem px-[4.5rem] py-[0.75rem] text-gray-950">
+    <div className="absolute top-0 flex items-center justify-between w-full  px-[2.5rem] py-[0.75rem] text-gray-950 lg:px-[4.5rem]">
       {/* logo */}
       <div className="flex gap-[0.75rem] items-center justify-center">
         <Image src='/kimlogo.svg' width={27} height={27} alt="logo"/>
@@ -46,7 +47,7 @@ export default function PracticeAnimation() {
       </div>
 
       {/* menu */}
-      <div>
+      <div className="hidden lg:block">
         <ul className="flex items-center justify-center gap-[2.75rem] text-[0.875rem] font-medium">
           <li className="cursor-pointer hover:underline hover:underline-offset-8">Home</li>
           <li className="cursor-pointer hover:underline hover:underline-offset-8">About</li>
@@ -60,33 +61,35 @@ export default function PracticeAnimation() {
     </div>
 
     {/* HERO CONTAINER */}
-    <div className="scroll-smooth flex items-center justify-between w-full h-full px-[9rem] text-neutral-950 ">
+    <div className="scroll-smooth flex flex-col items-center justify-center w-full h-full px-[2.5rem] text-neutral-950 lg:flex-row lg:justify-between lg:px-[9rem]">
+      
     {/* HERO DETAIL SECTION */}
-    <div className="flex flex-col w-[553px] gap-[2rem] items-start justify-start">
-    <h1 className="text-[96px] text-start font-semibold leading-[81px]">
-    React,
-    <span className="inline-flex align-middle ml-2">
-      <Image src='/react-logo.svg' width={60} height={53} alt="reactlogo"/>
-    </span> 
-    Tailwind 
-    <span className="inline-flex align-middle ml-2">
-      <Image src='/tailwindcss.svg' width={72} height={42} alt="tailwindlogo"/>
-    </span>
-    Front-end Developer</h1>
-        <button className="flex items-center justify-center w-[272px] h-[68px] text-[1.5rem] tracking-widest font-semibold border border-gray-950 rounded-[18px]">
-          ABOUT
-        </button>
+    <div className="flex flex-col w-full gap-[2rem] items-center justify-center lg:items-start lg:w-[553px]">
+      <h1 className="text-[50px] text-start font-semibold leading-10 lg:leading-[81px] lg:text-[96px]">
+        React,
+        <span className="inline-flex align-middle ml-2">
+          <Image className="reactLogo w-[3rem] lg:w-[4.75rem]" src='/react-logo.svg' width={60} height={53} alt="reactlogo"/>
+        </span> 
+        Tailwind 
+        <span className="inline-flex align-middle mx-2">
+          <Image className="w-[3rem] lg:w-[4.75rem]" src='/tailwindcss.svg' width={72} height={42} alt="tailwindlogo"/>
+        </span>
+        Front-end Developer
+      </h1>
+      <button className="flex items-center justify-center w-full text-[1.5rem] tracking-widest font-semibold cursor-pointer border border-gray-950 rounded-[18px] lg:h-[68px] lg:w-[272px]">
+        ABOUT
+      </button>
     </div>
 
     {/* HERO AVATAR SECTION */}
-      <div>
-        <Image src='/avatar-no-color.png' width={332} height={358} alt="heroavatar"/>
-      </div>
+    <div>
+      <Image src='/avatar-no-color.png' width={332} height={358} alt="heroavatar"/>
+    </div>
 
     </div>
     {/*TOOLS SECTION */}
       <div className="absolute bottom-0 w-full overflow-hidden py-[1rem]">
-        <div className="tools-ticker flex gap-[2.75rem] w-max">
+        <div className="tools flex gap-[2.75rem] w-max">
           {Array(toolsCount).fill(0).map((_, idx) => (
             tools.map((tool, i) => (
               <p className="text-[1.5rem] text-gray-900 font-medium" key={idx + '-' + i}>{tool}</p>

@@ -22,12 +22,12 @@ export default function About (){
         };
 
     return(
-        <div className="grid grid-cols-2 h-[100vh] w-full text-neutral-800 mt-40">
+        <div className="grid h-full w-full text-neutral-800 mt-40 lg:grid-cols-2">
             <div className="flex flex-col items-center">
                 <Image src='/about.svg' width={450} height={450} alt="avatar"/>
             </div>
             
-            <div className="text-left text-neutral-700 ">
+            <div className="flex flex-col items-center text-center text-neutral-700 lg:items-start lg:text-left">
                 <h2 className="font-bold font-horizon text-5xl tracking-wide leading-16">About</h2>
                 <div className=" w-[25rem]">
                {
@@ -42,7 +42,7 @@ export default function About (){
                 } 
                 </div>
                
-               <div className="flex items-center  w-full h-min mt-10">
+               <div className="flex justify-center  w-full h-min mt-10 lg:justify-start">
 
                <div className="py-2 px-3 bg-blue-500 rounded-md w-[12rem] text-center mr-4">
                 <Link  href="/Resume.pdf" target="_blank" rel="noopener noreferrer" className="text-neutral-100 text-[16px]">Curriculumn-Vitae</Link>
