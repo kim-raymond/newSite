@@ -1,16 +1,41 @@
 // ScrollFadeText.tsx
 "use client";
 // import { useScroll, useTransform, motion } from "motion/react";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
 import Image from "next/image";
 
 
 export default function PracticeAnimation() {
 
+  gsap.registerPlugin(useGSAP);
+  const tools = ["NEXT", "Vite", "Webpack", "Jasmine", "TypeScript", "GitHub", "Vercel", "Netlify", "Framer-motion","GSAP",];
+  const { useRef } = require("react");
+  const container = useRef();
 
 
+  // useEffect(()=>{
+  // gsap.to(".tools",{x:-100,repeat:-1});
+  // },[]);
+    const toolsCount = 2; // duplicate count for seamless loop
+
+    useGSAP(() => {
+      const ticker = document.querySelector('.tools-ticker');
+      if (!ticker) return;
+      const tickerWidth = ticker.scrollWidth / toolsCount;
+      gsap.to(ticker, {
+        x: -tickerWidth,
+        duration: 20,
+        ease: 'linear',
+        repeat: -1,
+        modifiers: {
+          x: gsap.utils.unitize(x => parseFloat(x) % -tickerWidth)
+        }
+      });
+    }, {scope:container});
   return (
-    <div className="w-full h-[100vh]">
+    <div className="w-full h-[100vh] ">
     {/* NAV SECTION */}
     <div className="absolute flex items-center justify-between w-full h-1.5rem px-[4.5rem] py-[0.75rem] text-gray-950">
       {/* logo */}
@@ -58,6 +83,16 @@ export default function PracticeAnimation() {
       </div>
 
     </div>
+    {/*TOOLS SECTION */}
+      <div className="absolute bottom-0 w-full overflow-hidden py-[1rem]">
+        <div className="tools-ticker flex gap-[2.75rem] w-max">
+          {Array(toolsCount).fill(0).map((_, idx) => (
+            tools.map((tool, i) => (
+              <p className="text-[1.5rem] text-gray-900 font-medium" key={idx + '-' + i}>{tool}</p>
+            ))
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
