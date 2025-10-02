@@ -1,18 +1,19 @@
 // ScrollFadeText.tsx
 "use client";
 // import { useScroll, useTransform, motion } from "motion/react";
-// import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import Image from "next/image";
+import React from "react";
 
 
 export default function PracticeAnimation() {
 
   gsap.registerPlugin(useGSAP);
   const tools = ["NEXT", "Vite", "Webpack", "Jasmine", "TypeScript", "GitHub", "Vercel", "Netlify", "Framer-motion","GSAP",];
-  const { useRef } = require("react");
-  const container = useRef();
+  // const { useRef } = React;
+  const container = useRef(null);
 
 
   // useEffect(()=>{
