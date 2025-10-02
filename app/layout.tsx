@@ -32,8 +32,8 @@ const horizon_outlined = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Kim Magallanes",
-  description: "Front-end Developer",
+  title: "Kim Raymond Magallanes",
+  description: "Front-end Developer from the Philippines.",
 };
 
 export default function RootLayout({

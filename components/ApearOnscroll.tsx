@@ -1,46 +1,63 @@
 // ScrollFadeText.tsx
 "use client";
-import { useScroll, useTransform, motion } from "motion/react";
+// import { useScroll, useTransform, motion } from "motion/react";
 import { useRef } from "react";
 import Image from "next/image";
 
 
 export default function PracticeAnimation() {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  });
 
-  const opacity = useTransform(scrollYProgress, [0.5, 0.7], [1, 0]);
-  const top = useTransform(scrollYProgress,[0.5, 0.7],['60%', '80%'])
+
 
   return (
-    <div className="scroll-smooth flex flex-col items-center w-screen h-[100vh]  text-neutral-950 mb-30 ">
+    <div className="w-full h-[100vh]">
+    {/* NAV SECTION */}
+    <div className="absolute flex items-center justify-between w-full h-1.5rem px-[4.5rem] py-[0.75rem] text-gray-950">
+      {/* logo */}
+      <div className="flex gap-[0.75rem] items-center justify-center">
+        <Image src='/kimlogo.svg' width={27} height={27} alt="logo"/>
+        <p className="text-[1.25rem] font-bold">Kim</p>
+      </div>
 
-        <motion.div 
-        style={{top}}
-        className="absolute top-[60%] left-[52%] z-20 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
-        <Image
-          src="/avatar.png"
-          alt="Overlay"
-          width={400}
-          height={400}
-          className="opacity-100 "
-        />
-          <p className=" text-2xl tracking-wide text-neutral-500 font-medium font-poppins">Front-end Developer UI/UX    Designer</p>
+      {/* menu */}
+      <div>
+        <ul className="flex items-center justify-center gap-[2.75rem] text-[0.875rem] font-medium">
+          <li className="cursor-pointer hover:underline hover:underline-offset-8">Home</li>
+          <li className="cursor-pointer hover:underline hover:underline-offset-8">About</li>
+          <li className="cursor-pointer hover:underline hover:underline-offset-8">Services</li>
+          <li className="cursor-pointer hover:underline hover:underline-offset-8">Projects</li>
+        </ul>
+      </div>
 
-      </motion.div>
+      {/* button */}
+      <button className="w-[96px] px-[0.5rem] py-[0.5rem] cursor-pointer border border-black rounded-lg">Say Hi!</button>
+    </div>
 
-      <motion.div
-        ref={ref}
-        style={{ opacity }}
-        className="mt-20 w-[140vh] h-full text-3xl text-center wrap-anywhere  leading-20 ">
-        Bridging {"   "}<strong className="text-4xl font-horizon text-bermuda">CREATIVITY</strong> and{"  "}
-        <span className="text-[20vh] font-bold font-horizon leading-28 text-bermuda">FUNCTIONALITY</span>
+    {/* HERO CONTAINER */}
+    <div className="scroll-smooth flex items-center justify-between w-full h-full px-[9rem] text-neutral-950 ">
+    {/* HERO DETAIL SECTION */}
+    <div className="flex flex-col w-[553px] gap-[2rem] items-start justify-start">
+    <h1 className="text-[96px] text-start font-semibold leading-[81px]">
+    React,
+    <span className="inline-flex align-middle ml-2">
+      <Image src='/react-logo.svg' width={60} height={53} alt="reactlogo"/>
+    </span> 
+    Tailwind 
+    <span className="inline-flex align-middle ml-2">
+      <Image src='/tailwindcss.svg' width={72} height={42} alt="tailwindlogo"/>
+    </span>
+    Front-end Developer</h1>
+        <button className="flex items-center justify-center w-[272px] h-[68px] text-[1.5rem] tracking-widest font-semibold border border-gray-950 rounded-[18px]">
+          ABOUT
+        </button>
+    </div>
 
-      </motion.div>
+    {/* HERO AVATAR SECTION */}
+      <div>
+        <Image src='/avatar-no-color.png' width={332} height={358} alt="heroavatar"/>
+      </div>
 
+    </div>
     </div>
   );
 }
