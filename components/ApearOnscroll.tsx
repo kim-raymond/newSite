@@ -1,7 +1,7 @@
 // ScrollFadeText.tsx
 "use client";
 // import { useScroll, useTransform, motion } from "motion/react";
-import { useRef, useEffect } from "react";
+// import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import Image from "next/image";

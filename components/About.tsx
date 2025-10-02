@@ -1,6 +1,6 @@
 'use client'
 import { motion } from "motion/react";
-import { Londrina_Sketch } from "next/font/google";
+// import { Londrina_Sketch } from "next/font/google";
 // import { div } from "motion/react-client";
 import Image from "next/image";
 import Link from "next/link";

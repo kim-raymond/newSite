@@ -6,7 +6,7 @@ import Projects from "@/components/Projects";
 import Services from "@/components/Services";
 // import Offers from "@/components/Offers";
 import About from "@/components/About";
-import { hover } from "motion";
+// import { hover } from "motion";
 
 export default function Home() {
 
