@@ -47,9 +47,9 @@ export default function Projects({setHovered}:HoverProps) {
   // }, []);
 
   return (
-    <div ref={sectionRef} className="flex flex-col  h-[150vh] mt-30 mb-10">
+    <div ref={sectionRef} className="flex flex-col h-max mt-30 mb-10 ">
       {/* Section Title */}
-      <div className="relative text-left text-[2.5em] font-bold text-neutral-600 font-horizon h-12">
+      <div className="relative text-left">
         <motion.h1
           initial={{ opacity: 0, marginTop: 80 }}
           whileInView={{ opacity: 1, marginTop: 0 }}
@@ -59,14 +59,14 @@ export default function Projects({setHovered}:HoverProps) {
             restSpeed: 0.8,
             ease: easeInOut,
           }}
-          className="absolute"
+          className="absolute text-[1.25em] w-full font-medium text-neutral-700 font-poppins leading-6 h-12"
         >
-          RECENT PROJECTS
+          | Recent Projects |
         </motion.h1>
       </div>
 
       {/* Project Grid */}
-      <div className="grid  justify-items-stretch mt-30 lg:grid-cols-3 lg:mt-20 lg:gap-8 ">
+      <div className="grid  justify-items-stretch mt-17 lg:grid-cols-3 lg:mt-20 lg:gap-8 ">
         {images.map((img, i) => (
           <motion.div key={i} className="relative w-80 h-58 lg:h-70 ">
             {/* Background using separate array */}
@@ -99,10 +99,11 @@ export default function Projects({setHovered}:HoverProps) {
           </motion.div>
         ))}
       </div>
-      <div className=" grid grid-cols-1 gap-2 h-[80vh] lg:grid-cols-2">
+      <div className=" grid gap-2 h-max lg:grid-cols-2 ">
         {secondImages.map((image,i)=>(
           <div key={i}
           className='
+          h-28 lg:h-48 w-full
           flex flex-col 
           items-center justify-center 
           bg-size-(--bg-normal) bg-no-repeat bg-center

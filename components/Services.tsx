@@ -39,11 +39,11 @@ export default function Services ({setHovered,setIndex}:ServicesProps){
             ease:easeIn,
             restSpeed:0.2
         }} 
-            className="flex flex-col items-center text-neutral-400/100 h-[130vh] pt-30 w-full bg-neutral-800 ">
+            className="flex flex-col items-center text-neutral-400/100 h-[120vh] pt-[3rem] px-[2rem] md:px-[10.75rem] w-full bg-neutral-800 ">
 
-            <h1 className="text-5xl font-bold font-horizon leading-10 tracking-wide">Services</h1>
-            <p className="text-2xl tracking-wide font-poppins mt-8">Avail Personalized solutions crafted to advance your online presence</p>
-            <div className="text-left my-22 w-2/3 border-b border-neutral-600">
+            <h1 className="text-[1.5rem] font-medium font-poppins leading-10 ">| Services |</h1>
+            <p className="text-[1.7rem] tracking-wide font-poppins mt-8">Avail Personalized solutions crafted to advance your online presence</p>
+            <div className="text-left my-22 w-full border-b border-neutral-600">
                 {ServicesData.map((service,i)=>(
                 <motion.div 
                 initial={{height:65}}
@@ -51,7 +51,7 @@ export default function Services ({setHovered,setIndex}:ServicesProps){
                 transition={{ease:easeIn}}
                 onHoverStart={()=>managaHover(2,i)}
                 onHoverEnd={()=>managaHover(0,i)} 
-                key={i} className=" border-t border-neutral-600 overflow-y-clip">
+                key={i} className="border-t border-neutral-600 overflow-y-clip">
                   <h3 className="font-bold text-4xl tracking-normal leading-15">{service.title}</h3>
                   <p className="font-poppins text-[18px] ">{service.description}</p>  
                 </motion.div>

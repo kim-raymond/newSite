@@ -22,13 +22,13 @@ export default function About (){
         };
 
     return(
-        <div className="grid h-full w-full text-neutral-800 mt-40 lg:grid-cols-2">
+        <div className="flex flex-col items-center justify-center h-max lg:h-[100vh] gap-4 w-full lg:gap-[10rem] pb-10 px-2.5 text-neutral-800 mt-[4rem] lg:flex-row">
             <div className="flex flex-col items-center">
                 <Image src='/about.svg' width={450} height={450} alt="avatar"/>
             </div>
             
-            <div className="flex flex-col items-center text-center text-neutral-700 lg:items-start lg:text-left">
-                <h2 className="font-bold font-horizon text-5xl tracking-wide leading-16">About</h2>
+            <div className="flex flex-col text-start text-neutral-700 lg:items-start lg:text-left">
+                <h2 className="w-full font-medium font-poppins text-[2rem] tracking-normal leading-[4rem]">About</h2>
                 <div className=" w-[25rem]">
                {
                 aboutText.split("").map((l,i)=>(
@@ -42,15 +42,15 @@ export default function About (){
                 } 
                 </div>
                
-               <div className="flex justify-center  w-full h-min mt-10 lg:justify-start">
+               <div className="flex justify-start w-full h-min mt-10 ">
 
                <div className="py-2 px-3 bg-blue-500 rounded-md w-[12rem] text-center mr-4">
                 <Link  href="/Resume.pdf" target="_blank" rel="noopener noreferrer" className="text-neutral-100 text-[16px]">Curriculumn-Vitae</Link>
                </div> 
 
-                <button onClick={openGmailCompose}> 
+                {/* <button onClick={openGmailCompose}> 
                 <Image src='/gmail.svg' width={40} height={40} alt="github" className="mx-6"/>
-                </button>
+                </button> */}
 
                 <Link href="https://github.com/kim-raymond" target="_blank" rel="noopener noreferrer">
                     <Image src='/github-mark.svg' width={33} height={30} alt="github" className="mx-6"/>

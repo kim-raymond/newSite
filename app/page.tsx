@@ -83,7 +83,7 @@ export default function Home() {
             ? (Images[index])
             : {}),
           }}
-        className="fixed bg-red-500 pointer-events-none z-50 transform -translate-x-1/2 -translate-y-1/2"
+        className="fixed hidden lg:block  bg-red-500 pointer-events-none z-50 transform -translate-x-1/2 -translate-y-1/2"
       ><p>{hovered === 1 ?'View': hovered === 0 ? '':null}</p>
       </div>
 
